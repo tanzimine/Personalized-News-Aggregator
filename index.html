@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalized News Aggregator</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="bg-blue-600 p-4 text-white flex justify-between items-center">
+    <div class="flex items-center">
+      <img src="./assets/world-news.png" alt="Logo" class="w-12 mr-4" />
+      <h1 class="text-2xl font-bold">News Aggregator</h1>
+    </div>
+    <div class="space-x-4">
+      <button onclick="fetchNews('technology')" class="bg-blue-800 hover:bg-blue-700 py-2 px-4 rounded">Tech</button>
+      <button onclick="fetchNews('sports')" class="bg-blue-800 hover:bg-blue-700 py-2 px-4 rounded">Sports</button>
+      <button onclick="fetchNews('health')" class="bg-blue-800 hover:bg-blue-700 py-2 px-4 rounded">Health</button>
+      <button onclick="fetchNews('business')" class="bg-blue-800 hover:bg-blue-700 py-2 px-4 rounded">Business</button>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="flex flex-col md:flex-row justify-between p-6">
+
+    <!-- News Feed Section -->
+    <section class="md:w-3/4">
+      <h2 class="text-xl font-semibold mb-4">Latest News</h2>
+      <div id="newsFeed" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- Saved Articles Sidebar -->
+    <aside class="md:w-1/4 mt-8 md:mt-0 md:ml-6">
+      <h2 class="text-xl font-semibold mb-4">Saved Articles</h2>
+      <div id="savedArticles" class="space-y-4"></div>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white text-center p-4">
+    <p>Powered by <a href="https://newsapi.org/" class="underline hover:text-blue-300">News API</a></p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>
